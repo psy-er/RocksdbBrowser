@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
-const port = 5000;
+const bodyParser = require('body-parser');
+const rocksdbRoutes = require('./routes/rocksdb');
+const cors = require('cors');
 
-app.get('/', (req, res) => {
-  res.send('Hello from the backend!');
-});
+app.use(cors());
+app.use(bodyParser.json());
+app.use('/rocksdb', rocksdbRoutes);
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+const PORT = 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
