@@ -1,24 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React from 'react';
+import FileForm from './components/FileForm';
+import FileList from './components/FileList';
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/api/data')
-      .then(response => response.json())
-      .then(data => setData(data));
-  }, []);
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Fetch Data from Node.js</h1>
-        {data ? <p>{data.message}</p> : <p>Loading...</p>}
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <h1>RocksDB Browser</h1>
+            <FileForm />
+            <FileList />
+        </div>
+    );
 }
 
 export default App;
-
