@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const RocksDB = require('rocksdb');
 
-const dbPath = "rocksdb16";
+const dbPath = "testdb";
 const db = RocksDB(dbPath);
 
 db.open({ createIfMissing: true }, (err) => {
@@ -28,18 +28,34 @@ router.get('/all', (req, res) => {
     const result = [];
     const iterator = db.iterator();
 
-    iterator.each((err, key, value) => {
-        if (err) {
-            res.status(500).json({ message: 'Failed to retrieve data', error: err });
-            return;
-        }
-        if (key && value) {
-            result.push({ key: key.toString(), value: JSON.parse(value.toString()) });
-        } else {
-            res.status(200).json(result);
-        }
-    });
+    const collectData = () => {
+        iterator.next((err, key, value) => {
+            if (err) {
+                res.status(500).json({ message: 'Failed to retrieve data', error: err });
+                return;
+            }
+            if (key === null || value === null) {
+                // End of the iteration
+                iterator.end((endErr) => {
+                    if (endErr) {
+                        res.status(500).json({ message: 'Failed to close iterator', error: endErr });
+                        return;
+                    }
+                    res.status(200).json(result);
+                });
+                return;
+            }
+            if (key !== undefined && value !== undefined) {
+                result.push({ key: key.toString(), value: JSON.parse(value.toString()) });
+            } else {
+                console.warn('Received undefined key or value');
+            }
+            // Continue to the next entry
+            collectData();
+        });
+    };
+
+    collectData(); // Start data collection
 });
 
 module.exports = router;
-
