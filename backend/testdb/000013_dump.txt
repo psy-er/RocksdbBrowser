@@ -1,0 +1,74 @@
+Footer Details:
+--------------------------------------
+  metaindex handle: CB074F offset: 971 size: 79
+  index handle: 9C011C offset: 156 size: 28
+  table_magic_number: 9863518390377041911
+  format version: 4
+
+Metaindex Details:
+--------------------------------------
+  Filter block handle: 5245
+  Properties block handle: BD018906
+
+Table Properties:
+--------------------------------------
+  # data blocks: 1
+  # entries: 2
+  # deletions: 0
+  # merge operands: 0
+  # range deletions: 0
+  raw key size: 59
+  raw average key size: 29.500000
+  raw value size: 4
+  raw average value size: 2.000000
+  data block size: 82
+  index block size (user-key? 1, delta-value? 1): 33
+  filter block size: 69
+  # entries for filter: 0
+  (estimated) table size: 184
+  filter policy name: rocksdb.BuiltinBloomFilter
+  prefix extractor name: nullptr
+  column family ID: 0
+  column family name: default
+  comparator name: leveldb.BytewiseComparator
+  user defined timestamps persisted: true
+  merge operator name: nullptr
+  property collectors names: []
+  SST file compression algo: Snappy
+  SST file compression options: window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; 
+  creation time: 1722497879
+  time stamp of earliest key: 0
+  file creation time: 0
+  slow compression estimated data size: 0
+  fast compression estimated data size: 0
+  DB identity: 91bf1415-4fa8-11ef-9e29-f4442f7aedbf
+  DB session identity: FSZTKIF3J8ASIMRX3S92
+  DB host id: ELAB-087
+  original file number: 0
+  unique ID: N/A
+  Sequence number to time mapping: 
+  
+Index Details:
+--------------------------------------
+  Block key hex dump: Data block handle
+  Block key ascii
+
+  HEX    EC9DB4EC8381ED95B420ECA784ECA79C: 004D offset 0 size 77
+  ASCII  Ï ù ¥ Ï É Å Ì ï ¥   Ï ß Ñ Ï ß ú 
+  ------
+
+Data Block # 1 @ 004D
+--------------------------------------
+  HEX    433A5C50726F6772616D2046696C65735C372D5A69705C4C616E67: 7B7D
+  ASCII  C : \ P r o g r a m   F i l e s \ 7 - Z i p \ L a n g : { } 
+  ------
+  HEX    EC9DB4EC8381ED95B420ECA784ECA79C: 7B7D
+  ASCII  Ï ù ¥ Ï É Å Ì ï ¥   Ï ß Ñ Ï ß ú : { } 
+  ------
+
+Data Block Summary:
+--------------------------------------
+  # data blocks: 1
+  min data block size: 77
+  max data block size: 77
+  avg data block size: 77.000000
