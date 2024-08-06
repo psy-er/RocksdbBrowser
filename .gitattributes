@@ -1,1 +1,5 @@
-*.cpp linguist-detectable=false
+*.cpp linguist-vendored
+*.hpp linguist-vendored
+*.h linguist-vendored
+*.cc linguist-vendored
+*.cxx linguist-vendored
