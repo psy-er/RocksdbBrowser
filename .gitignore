@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore lock file and current file in testdb directory
+backend/testdb/LOCK
+backend/testdb/CURRENT

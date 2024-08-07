@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../Navbar';
+import WithNavbar from '../WithNavbar';
 
 const FileForm = () => {
     const [filePath, setFilePath] = useState('');
@@ -19,20 +21,22 @@ const FileForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                placeholder="File Path" 
-                value={filePath} 
-                onChange={(e) => setFilePath(e.target.value)} 
-            />
-            <textarea 
-                placeholder="File Info as JSON" 
-                value={JSON.stringify(fileInfo)} 
-                onChange={(e) => setFileInfo(JSON.parse(e.target.value))} 
-            />
-            <button type="submit">Insert File Info</button>
-        </form>
+        <WithNavbar>
+            <form onSubmit={handleSubmit}>
+                <input 
+                    type="text" 
+                    placeholder="File Path" 
+                    value={filePath} 
+                    onChange={(e) => setFilePath(e.target.value)} 
+                />
+                <textarea 
+                    placeholder="File Info as JSON" 
+                    value={JSON.stringify(fileInfo)} 
+                    onChange={(e) => setFileInfo(JSON.parse(e.target.value))} 
+                />
+                <button type="submit">Insert File Info</button>
+            </form>
+        </WithNavbar>
     );
 };
 
