@@ -1,3 +1,4 @@
+// 각 엔드포인트를 정의
 const express = require('express');
 const router = express.Router();
 const RocksDB = require('rocksdb');
@@ -10,7 +11,7 @@ db.open({ createIfMissing: true }, (err) => {
     console.log('RocksDB connected');
 });
 
-// Insert file info
+// Insert key-value
 router.post('/insert', (req, res) => {
     const { key, value } = req.body;
 
@@ -50,12 +51,12 @@ router.get('/all', (req, res) => {
             } else {
                 console.warn('Received undefined key or value');
             }
-            // Continue to the next entry
+            // Continue
             collectData();
         });
     };
 
-    collectData(); // Start data collection
+    collectData(); 
 });
 
 module.exports = router;
