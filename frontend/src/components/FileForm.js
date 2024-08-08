@@ -13,7 +13,6 @@ const FileForm = () => {
             parsedFileInfo = JSON.parse(fileInfo);
         } catch (error) {
             console.error('Invalid JSON:', error);
-            alert('Invalid JSON format!');
             return;
         }
 

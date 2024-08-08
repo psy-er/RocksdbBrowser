@@ -1,0 +1,73 @@
+Footer Details:
+--------------------------------------
+  metaindex handle: 930736 offset: 915 size: 54
+  index handle: 0000 offset: 0 size: 0
+  table_magic_number: 9863518390377041911
+  format version: 6
+
+Metaindex Details:
+--------------------------------------
+  Properties block handle: 4CC206
+
+Table Properties:
+--------------------------------------
+  # data blocks: 1
+  # entries: 2
+  # deletions: 0
+  # merge operands: 0
+  # range deletions: 0
+  raw key size: 24
+  raw average key size: 12.000000
+  raw value size: 10
+  raw average value size: 5.000000
+  data block size: 52
+  index block size (user-key? 1, delta-value? 1): 24
+  filter block size: 0
+  # entries for filter: 0
+  (estimated) table size: 76
+  filter policy name: N/A
+  prefix extractor name: nullptr
+  column family ID: 0
+  column family name: default
+  comparator name: leveldb.BytewiseComparator
+  user defined timestamps persisted: true
+  merge operator name: nullptr
+  property collectors names: []
+  SST file compression algo: NoCompression
+  SST file compression options: window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; max_dict_buffer_bytes=0; use_zstd_dict_trainer=1; 
+  creation time: 0
+  time stamp of earliest key: 0
+  file creation time: 0
+  slow compression estimated data size: 0
+  fast compression estimated data size: 0
+  DB identity: DB Repairer
+  DB session identity: ZDEAPIYQN2YLTW0B4WRK
+  DB host id: ELAB-087
+  original file number: 129
+  unique ID: 659905B4BF033A9A-BCD6B9946B52ACBF
+  Sequence number to time mapping: 
+  
+Index Details:
+--------------------------------------
+  Block key hex dump: Data block handle
+  Block key ascii
+
+  HEX    31313131313131: 002F offset 0 size 47
+  ASCII  1 1 1 1 1 1 1 
+  ------
+
+Data Block # 1 @ 002F
+--------------------------------------
+  HEX    31: 31
+  ASCII  1 : 1 
+  ------
+  HEX    31313131313131: 313131313131313131
+  ASCII  1 1 1 1 1 1 1 : 1 1 1 1 1 1 1 1 1 
+  ------
+
+Data Block Summary:
+--------------------------------------
+  # data blocks: 1
+  min data block size: 47
+  max data block size: 47
+  avg data block size: 47.000000

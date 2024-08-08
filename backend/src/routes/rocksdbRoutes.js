@@ -1,12 +1,12 @@
-// 각 엔드포인트를 정의
 const express = require('express');
 const router = express.Router();
-const RocksDB = require('rocksdb');
+const levelup = require('levelup');
+const leveldown = require('leveldown');
 
-const dbPath = "testdb";
-const db = RocksDB(dbPath);
+const dbPath = 'test';
+const db = levelup(leveldown(dbPath), { createIfMissing: true });
 
-db.open({ createIfMissing: true }, (err) => {
+db.open((err) => {
     if (err) throw err;
     console.log('RocksDB connected');
 });
@@ -15,7 +15,7 @@ db.open({ createIfMissing: true }, (err) => {
 router.post('/insert', (req, res) => {
     const { key, value } = req.body;
 
-    db.put(key, JSON.stringify(value), (err) => {
+    db.put(key, JSON.stringify(value), { sync: true }, (err) => {
         if (err) {
             res.status(500).json({ message: 'Failed to insert data', error: err });
         } else {
@@ -36,7 +36,7 @@ router.get('/all', (req, res) => {
                 return;
             }
             if (key === null || value === null) {
-                // End of the iteration
+                // End of the iteration 
                 iterator.end((endErr) => {
                     if (endErr) {
                         res.status(500).json({ message: 'Failed to close iterator', error: endErr });

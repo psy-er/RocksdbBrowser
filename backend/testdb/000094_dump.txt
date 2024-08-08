@@ -1,0 +1,94 @@
+Footer Details:
+--------------------------------------
+  metaindex handle: EA0838 offset: 1130 size: 56
+  index handle: 0000 offset: 0 size: 0
+  table_magic_number: 9863518390377041911
+  format version: 6
+
+Metaindex Details:
+--------------------------------------
+  Properties block handle: A102C406
+
+Table Properties:
+--------------------------------------
+  # data blocks: 1
+  # entries: 9
+  # deletions: 0
+  # merge operands: 0
+  # range deletions: 0
+  raw key size: 142
+  raw average key size: 15.777778
+  raw value size: 121
+  raw average value size: 13.444444
+  data block size: 259
+  index block size (user-key? 1, delta-value? 1): 30
+  filter block size: 0
+  # entries for filter: 0
+  (estimated) table size: 289
+  filter policy name: N/A
+  prefix extractor name: nullptr
+  column family ID: 0
+  column family name: default
+  comparator name: leveldb.BytewiseComparator
+  user defined timestamps persisted: true
+  merge operator name: nullptr
+  property collectors names: []
+  SST file compression algo: NoCompression
+  SST file compression options: window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; max_dict_buffer_bytes=0; use_zstd_dict_trainer=1; 
+  creation time: 0
+  time stamp of earliest key: 0
+  file creation time: 0
+  slow compression estimated data size: 0
+  fast compression estimated data size: 0
+  DB identity: DB Repairer
+  DB session identity: E1LXQS882TQRZ8U1UUHY
+  DB host id: ELAB-087
+  original file number: 94
+  unique ID: 26CC49748F8AEF35-F9AFC60431BD4D47
+  Sequence number to time mapping: 
+  
+Index Details:
+--------------------------------------
+  Block key hex dump: Data block handle
+  Block key ascii
+
+  HEX    353535353535353534343434: 00FE01 offset 0 size 254
+  ASCII  5 5 5 5 5 5 5 5 4 4 4 4 
+  ------
+
+Data Block # 1 @ 00FE01
+--------------------------------------
+  HEX    313131313131: 313131313131
+  ASCII  1 1 1 1 1 1 : 1 1 1 1 1 1 
+  ------
+  HEX    323232323232: 323232323232
+  ASCII  2 2 2 2 2 2 : 2 2 2 2 2 2 
+  ------
+  HEX    343534353435: 3435343534353435
+  ASCII  4 5 4 5 4 5 : 4 5 4 5 4 5 4 5 
+  ------
+  HEX    3535353535353535: 35353535353535353535353535353535
+  ASCII  5 5 5 5 5 5 5 5 : 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+  ------
+  HEX    3535353535353535: 35353535353535353535353535353535
+  ASCII  5 5 5 5 5 5 5 5 : 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+  ------
+  HEX    3535353535353535: 35353535353535353535353535353535
+  ASCII  5 5 5 5 5 5 5 5 : 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+  ------
+  HEX    3535353535353535: 35353535353535353535353535353535
+  ASCII  5 5 5 5 5 5 5 5 : 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+  ------
+  HEX    3535353535353535: 35353535353535353535353535353535
+  ASCII  5 5 5 5 5 5 5 5 : 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+  ------
+  HEX    353535353535353534343434: 353535353535353535353535353535353430303030
+  ASCII  5 5 5 5 5 5 5 5 4 4 4 4 : 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 0 0 0 0 
+  ------
+
+Data Block Summary:
+--------------------------------------
+  # data blocks: 1
+  min data block size: 254
+  max data block size: 254
+  avg data block size: 254.000000

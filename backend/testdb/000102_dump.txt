@@ -1,0 +1,74 @@
+Footer Details:
+--------------------------------------
+  metaindex handle: 9F074F offset: 927 size: 79
+  index handle: 7B11 offset: 123 size: 17
+  table_magic_number: 9863518390377041911
+  format version: 4
+
+Metaindex Details:
+--------------------------------------
+  Filter block handle: 3145
+  Properties block handle: 91018906
+
+Table Properties:
+--------------------------------------
+  # data blocks: 1
+  # entries: 2
+  # deletions: 0
+  # merge operands: 0
+  # range deletions: 0
+  raw key size: 23
+  raw average key size: 11.500000
+  raw value size: 9
+  raw average value size: 4.500000
+  data block size: 49
+  index block size (user-key? 1, delta-value? 1): 22
+  filter block size: 69
+  # entries for filter: 0
+  (estimated) table size: 140
+  filter policy name: rocksdb.BuiltinBloomFilter
+  prefix extractor name: nullptr
+  column family ID: 0
+  column family name: default
+  comparator name: leveldb.BytewiseComparator
+  user defined timestamps persisted: true
+  merge operator name: nullptr
+  property collectors names: []
+  SST file compression algo: Snappy
+  SST file compression options: window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; 
+  creation time: 1723092720
+  time stamp of earliest key: 0
+  file creation time: 0
+  slow compression estimated data size: 0
+  fast compression estimated data size: 0
+  DB identity: 4548e231-5541-11ef-9e31-f5f8ab3d588e
+  DB session identity: 7XADKD25OMQY8BXE1OIJ
+  DB host id: ELAB-087
+  original file number: 0
+  unique ID: N/A
+  Sequence number to time mapping: 
+  
+Index Details:
+--------------------------------------
+  Block key hex dump: Data block handle
+  Block key ascii
+
+  HEX    3434353535: 002C offset 0 size 44
+  ASCII  4 4 5 5 5 
+  ------
+
+Data Block # 1 @ 002C
+--------------------------------------
+  HEX    3434: 343434
+  ASCII  4 4 : 4 4 4 
+  ------
+  HEX    3434353535: 343434353535
+  ASCII  4 4 5 5 5 : 4 4 4 5 5 5 
+  ------
+
+Data Block Summary:
+--------------------------------------
+  # data blocks: 1
+  min data block size: 44
+  max data block size: 44
+  avg data block size: 44.000000
