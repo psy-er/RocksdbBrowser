@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Navbar from '../Navbar';
 import WithNavbar from '../WithNavbar';
 
 const FileForm = () => {
     const [filePath, setFilePath] = useState('');
-    const [fileInfo, setFileInfo] = useState({});
+    const [fileInfo, setFileInfo] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        let parsedFileInfo;
+        try {
+            parsedFileInfo = JSON.parse(fileInfo);
+        } catch (error) {
+            console.error('Invalid JSON:', error);
+            alert('Invalid JSON format!');
+            return;
+        }
+
         try {
             const response = await axios.post('http://localhost:5000/rocksdb/insert', {
                 key: filePath,
-                value: fileInfo
+                value: parsedFileInfo
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
             console.log(response.data);
         } catch (error) {
@@ -31,8 +43,8 @@ const FileForm = () => {
                 />
                 <textarea 
                     placeholder="File Info as JSON" 
-                    value={JSON.stringify(fileInfo)} 
-                    onChange={(e) => setFileInfo(JSON.parse(e.target.value))} 
+                    value={fileInfo} 
+                    onChange={(e) => setFileInfo(e.target.value)} 
                 />
                 <button type="submit">Insert File Info</button>
             </form>

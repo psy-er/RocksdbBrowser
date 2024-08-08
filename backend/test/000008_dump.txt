@@ -1,0 +1,69 @@
+Footer Details:
+--------------------------------------
+  metaindex handle: DB074F offset: 987 size: 79
+  index handle: B20116 offset: 178 size: 22
+  table_magic_number: 9863518390377041911
+  format version: 4
+
+Metaindex Details:
+--------------------------------------
+  Filter block handle: 6845
+  Properties block handle: CD018906
+
+Table Properties:
+--------------------------------------
+  # data blocks: 1
+  # entries: 5
+  # deletions: 0
+  # merge operands: 0
+  # range deletions: 0
+  raw key size: 91
+  raw average key size: 18.200000
+  raw value size: 60
+  raw average value size: 12.000000
+  data block size: 104
+  index block size (user-key? 1, delta-value? 1): 27
+  filter block size: 69
+  # entries for filter: 0
+  (estimated) table size: 200
+  filter policy name: rocksdb.BuiltinBloomFilter
+  prefix extractor name: nullptr
+  column family ID: 0
+  column family name: default
+  comparator name: leveldb.BytewiseComparator
+  user defined timestamps persisted: true
+  merge operator name: nullptr
+  property collectors names: []
+  SST file compression algo: Snappy
+  SST file compression options: window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; 
+  creation time: 1723080531
+  time stamp of earliest key: 0
+  file creation time: 0
+  slow compression estimated data size: 0
+  fast compression estimated data size: 0
+  DB identity: c38e942c-5522-11ef-9e31-f5f8ab3d588e
+  DB session identity: DGWTFAP8MKP3O3LLS62N
+  DB host id: ELAB-087
+  original file number: 0
+  unique ID: N/A
+  Sequence number to time mapping: 
+  
+Index Details:
+--------------------------------------
+  Block key hex dump: Data block handle
+  Block key ascii
+
+  HEX    35353535353535373737: 0063 offset 0 size 99
+  ASCII  5 5 5 5 5 5 5 7 7 7 
+  ------
+
+Data Block # 1 @ 0063
+--------------------------------------
+Error reading the block - Skipped 
+
+Data Block Summary:
+--------------------------------------
+  # data blocks: 1
+  min data block size: 99
+  max data block size: 99
+  avg data block size: 99.000000
