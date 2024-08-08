@@ -18,11 +18,11 @@ function App() {
             <Routes>
                 
                 {/* test */}
-                <Route path="/file" element={<FileForm />} />
+                <Route path="/" element={<FileForm />} />
                 <Route path="/filelist" element={<FileList />} />
 
                 {/*Rocksdb 메인 페이지*/}
-                <Route path="/" element={<RocksdbManual />} />
+                <Route path="/manual" element={<RocksdbManual />} />
 
                 {/*Key-Value 데이터*/}
                 <Route path="/data/insert" element={<InsertData />} />

@@ -1,0 +1,69 @@
+Footer Details:
+--------------------------------------
+  metaindex handle: 8C074E offset: 908 size: 78
+  index handle: 6A0F offset: 106 size: 15
+  table_magic_number: 9863518390377041911
+  format version: 4
+
+Metaindex Details:
+--------------------------------------
+  Filter block handle: 2045
+  Properties block handle: 7E8906
+
+Table Properties:
+--------------------------------------
+  # data blocks: 1
+  # entries: 1
+  # deletions: 0
+  # merge operands: 0
+  # range deletions: 0
+  raw key size: 11
+  raw average key size: 11.000000
+  raw value size: 13
+  raw average value size: 13.000000
+  data block size: 32
+  index block size (user-key? 1, delta-value? 1): 20
+  filter block size: 69
+  # entries for filter: 0
+  (estimated) table size: 121
+  filter policy name: rocksdb.BuiltinBloomFilter
+  prefix extractor name: nullptr
+  column family ID: 0
+  column family name: default
+  comparator name: leveldb.BytewiseComparator
+  user defined timestamps persisted: true
+  merge operator name: nullptr
+  property collectors names: []
+  SST file compression algo: Snappy
+  SST file compression options: window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; 
+  creation time: 1723081493
+  time stamp of earliest key: 0
+  file creation time: 0
+  slow compression estimated data size: 0
+  fast compression estimated data size: 0
+  DB identity: 91bf1415-4fa8-11ef-9e29-f4442f7aedbf
+  DB session identity: EGXESTQK3AFRQBY6VQX7
+  DB host id: ELAB-087
+  original file number: 0
+  unique ID: N/A
+  Sequence number to time mapping: 
+  
+Index Details:
+--------------------------------------
+  Block key hex dump: Data block handle
+  Block key ascii
+
+  HEX    343434: 001B offset 0 size 27
+  ASCII  4 4 4 
+  ------
+
+Data Block # 1 @ 001B
+--------------------------------------
+Error reading the block - Skipped 
+
+Data Block Summary:
+--------------------------------------
+  # data blocks: 1
+  min data block size: 27
+  max data block size: 27
+  avg data block size: 27.000000

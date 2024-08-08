@@ -42,7 +42,7 @@ const Navbar = () => {
             </Link>
 
             {/*Rocksdb 소개*/}
-            <Link to ="/" className="nav-link" style={{textDecoration: 'none', fontSize: '0.7rem'}}>
+            <Link to ="/manual" className="nav-link" style={{textDecoration: 'none', fontSize: '0.7rem'}}>
                 <div className={isManual ? 'active' : 'inactive'}>
                     MANUAL
                 </div>
