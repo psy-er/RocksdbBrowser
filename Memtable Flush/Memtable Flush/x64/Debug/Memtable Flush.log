@@ -1,5 +1,4 @@
-﻿  MemtableFlush.cpp
-rocksdb.lib(status.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(MemtableFlush.obj에 위치) 값과 일치하지 않습니다.
+﻿rocksdb.lib(status.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(MemtableFlush.obj에 위치) 값과 일치하지 않습니다.
 rocksdb.lib(status.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(MemtableFlush.obj에 위치) 값과 일치하지 않습니다.
 rocksdb.lib(options.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(MemtableFlush.obj에 위치) 값과 일치하지 않습니다.
 rocksdb.lib(options.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(MemtableFlush.obj에 위치) 값과 일치하지 않습니다.

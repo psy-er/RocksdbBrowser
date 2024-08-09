@@ -1,6 +1,7 @@
 #include <iostream>
 #include <rocksdb/db.h>
 #include <rocksdb/status.h>
+#include <Rpc.h>
 
 using namespace std;
 using namespace rocksdb;
