@@ -1,15 +1,29 @@
 const express = require('express');
 const router = express.Router();
+const { execFile } = require('child_process');
 const levelup = require('levelup');
 const leveldown = require('leveldown');
 
-const dbPath = 'test';
+const dbPath = 'test2';
 const db = levelup(leveldown(dbPath), { createIfMissing: true });
 
 db.open((err) => {
     if (err) throw err;
     console.log('RocksDB connected');
 });
+
+// C++ 애플리케이션 실행 함수
+function runRocksDBApp(callback) {
+    execFile('C:\\RocksdbBrowser\\RocksdbBrower\\Memtable Flush\\x64\\Release\\Memtable Flush.exe', (error, stdout, stderr) => {
+        if (error) {
+            console.error('Error executing C++ app:', stderr);
+            callback(error, null);
+        } else {
+            console.log('C++ app output:', stdout);
+            callback(null, stdout);
+        }
+    });
+}
 
 // Insert key-value
 router.post('/insert', (req, res) => {
@@ -19,7 +33,14 @@ router.post('/insert', (req, res) => {
         if (err) {
             res.status(500).json({ message: 'Failed to insert data', error: err });
         } else {
-            res.status(200).json({ message: 'Data inserted successfully' });
+            // C++ 애플리케이션 실행 후 결과 반환
+            runRocksDBApp((error, output) => {
+                if (error) {
+                    res.status(500).json({ message: 'Failed to run C++ app', error: error });
+                } else {
+                    res.status(200).json({ message: 'Data inserted successfully', output: output });
+                }
+            });
         }
     });
 });
@@ -36,7 +57,6 @@ router.get('/all', (req, res) => {
                 return;
             }
             if (key === null || value === null) {
-                // End of the iteration 
                 iterator.end((endErr) => {
                     if (endErr) {
                         res.status(500).json({ message: 'Failed to close iterator', error: endErr });
@@ -51,12 +71,11 @@ router.get('/all', (req, res) => {
             } else {
                 console.warn('Received undefined key or value');
             }
-            // Continue
             collectData();
         });
     };
 
-    collectData(); 
+    collectData();
 });
 
 module.exports = router;
