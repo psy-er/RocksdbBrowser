@@ -4,7 +4,7 @@ const { execFile } = require('child_process');
 const levelup = require('levelup');
 const leveldown = require('leveldown');
 
-const dbPath = 'test2';
+const dbPath = 'test3';
 const db = levelup(leveldown(dbPath), { createIfMissing: true });
 
 db.open((err) => {
