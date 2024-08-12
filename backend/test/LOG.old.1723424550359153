@@ -1,0 +1,270 @@
+2024/08/12-10:02:30.192170 2ccc RocksDB version: 9.6.0
+2024/08/12-10:02:30.192923 2ccc Git sha d12aaf23cad1d2cec7f8d6ba23d28fb71d99f057
+2024/08/12-10:02:30.192974 2ccc Compile date 2024-08-02 19:31:55
+2024/08/12-10:02:30.192998 2ccc DB SUMMARY
+2024/08/12-10:02:30.193026 2ccc Host name (Env):  ELAB-087
+2024/08/12-10:02:30.193050 2ccc DB Session ID:  3AN1O1GLGVACCQZRW2UW
+2024/08/12-10:02:30.193360 2ccc CURRENT file:  CURRENT
+2024/08/12-10:02:30.193393 2ccc IDENTITY file:  IDENTITY
+2024/08/12-10:02:30.193465 2ccc MANIFEST file:  MANIFEST-000067 size: 527 Bytes
+2024/08/12-10:02:30.193492 2ccc SST files in test dir, Total Num: 6, files: 000005.ldb 000013.ldb 000018.ldb 000020.ldb 000023.ldb 000027.sst 
+2024/08/12-10:02:30.193513 2ccc Write Ahead Log file in test: 000066.log size: 0 ; 
+2024/08/12-10:02:30.193853 2ccc                         Options.error_if_exists: 0
+2024/08/12-10:02:30.193871 2ccc                       Options.create_if_missing: 1
+2024/08/12-10:02:30.193912 2ccc                         Options.paranoid_checks: 1
+2024/08/12-10:02:30.193927 2ccc             Options.flush_verify_memtable_count: 1
+2024/08/12-10:02:30.193937 2ccc          Options.compaction_verify_record_count: 1
+2024/08/12-10:02:30.193948 2ccc                               Options.track_and_verify_wals_in_manifest: 0
+2024/08/12-10:02:30.193964 2ccc        Options.verify_sst_unique_id_in_manifest: 1
+2024/08/12-10:02:30.193975 2ccc                                     Options.env: 0000019B3223AF30
+2024/08/12-10:02:30.194026 2ccc                                      Options.fs: WinFS
+2024/08/12-10:02:30.194048 2ccc                                Options.info_log: 0000019B322743F0
+2024/08/12-10:02:30.194060 2ccc                Options.max_file_opening_threads: 16
+2024/08/12-10:02:30.194068 2ccc                              Options.statistics: 0000000000000000
+2024/08/12-10:02:30.194078 2ccc                               Options.use_fsync: 0
+2024/08/12-10:02:30.194089 2ccc                       Options.max_log_file_size: 0
+2024/08/12-10:02:30.194097 2ccc                  Options.max_manifest_file_size: 1073741824
+2024/08/12-10:02:30.194106 2ccc                   Options.log_file_time_to_roll: 0
+2024/08/12-10:02:30.194126 2ccc                       Options.keep_log_file_num: 1000
+2024/08/12-10:02:30.194137 2ccc                    Options.recycle_log_file_num: 0
+2024/08/12-10:02:30.194155 2ccc                         Options.allow_fallocate: 1
+2024/08/12-10:02:30.194168 2ccc                        Options.allow_mmap_reads: 0
+2024/08/12-10:02:30.194177 2ccc                       Options.allow_mmap_writes: 0
+2024/08/12-10:02:30.194184 2ccc                        Options.use_direct_reads: 0
+2024/08/12-10:02:30.194226 2ccc                        Options.use_direct_io_for_flush_and_compaction: 0
+2024/08/12-10:02:30.194241 2ccc          Options.create_missing_column_families: 0
+2024/08/12-10:02:30.194248 2ccc                              Options.db_log_dir: 
+2024/08/12-10:02:30.194257 2ccc                                 Options.wal_dir: 
+2024/08/12-10:02:30.194296 2ccc                Options.table_cache_numshardbits: 6
+2024/08/12-10:02:30.194337 2ccc                         Options.WAL_ttl_seconds: 0
+2024/08/12-10:02:30.194358 2ccc                       Options.WAL_size_limit_MB: 0
+2024/08/12-10:02:30.194366 2ccc                        Options.max_write_batch_group_size_bytes: 1048576
+2024/08/12-10:02:30.194375 2ccc             Options.manifest_preallocation_size: 4194304
+2024/08/12-10:02:30.194383 2ccc                     Options.is_fd_close_on_exec: 1
+2024/08/12-10:02:30.194391 2ccc                   Options.advise_random_on_open: 1
+2024/08/12-10:02:30.194399 2ccc                    Options.db_write_buffer_size: 0
+2024/08/12-10:02:30.194406 2ccc                    Options.write_buffer_manager: 0000019B32270EA0
+2024/08/12-10:02:30.194414 2ccc           Options.random_access_max_buffer_size: 1048576
+2024/08/12-10:02:30.194421 2ccc                      Options.use_adaptive_mutex: 0
+2024/08/12-10:02:30.194430 2ccc                            Options.rate_limiter: 0000000000000000
+2024/08/12-10:02:30.194612 2ccc     Options.sst_file_manager.rate_bytes_per_sec: 0
+2024/08/12-10:02:30.194678 2ccc                       Options.wal_recovery_mode: 2
+2024/08/12-10:02:30.194698 2ccc                  Options.enable_thread_tracking: 0
+2024/08/12-10:02:30.194709 2ccc                  Options.enable_pipelined_write: 0
+2024/08/12-10:02:30.194719 2ccc                  Options.unordered_write: 0
+2024/08/12-10:02:30.194728 2ccc         Options.allow_concurrent_memtable_write: 1
+2024/08/12-10:02:30.194763 2ccc      Options.enable_write_thread_adaptive_yield: 1
+2024/08/12-10:02:30.194781 2ccc             Options.write_thread_max_yield_usec: 100
+2024/08/12-10:02:30.194792 2ccc            Options.write_thread_slow_yield_usec: 3
+2024/08/12-10:02:30.194801 2ccc                               Options.row_cache: None
+2024/08/12-10:02:30.194810 2ccc                              Options.wal_filter: None
+2024/08/12-10:02:30.194822 2ccc             Options.avoid_flush_during_recovery: 0
+2024/08/12-10:02:30.194833 2ccc             Options.allow_ingest_behind: 0
+2024/08/12-10:02:30.194842 2ccc             Options.two_write_queues: 0
+2024/08/12-10:02:30.194862 2ccc             Options.manual_wal_flush: 0
+2024/08/12-10:02:30.194944 2ccc             Options.wal_compression: 0
+2024/08/12-10:02:30.195048 2ccc             Options.background_close_inactive_wals: 0
+2024/08/12-10:02:30.195129 2ccc             Options.atomic_flush: 0
+2024/08/12-10:02:30.195164 2ccc             Options.avoid_unnecessary_blocking_io: 0
+2024/08/12-10:02:30.195177 2ccc                 Options.persist_stats_to_disk: 0
+2024/08/12-10:02:30.195187 2ccc                 Options.write_dbid_to_manifest: 0
+2024/08/12-10:02:30.195194 2ccc                 Options.log_readahead_size: 0
+2024/08/12-10:02:30.195203 2ccc                 Options.file_checksum_gen_factory: Unknown
+2024/08/12-10:02:30.195232 2ccc                 Options.best_efforts_recovery: 0
+2024/08/12-10:02:30.195242 2ccc                Options.max_bgerror_resume_count: 2147483647
+2024/08/12-10:02:30.195251 2ccc            Options.bgerror_resume_retry_interval: 1000000
+2024/08/12-10:02:30.195259 2ccc             Options.allow_data_in_errors: 0
+2024/08/12-10:02:30.195267 2ccc             Options.db_host_id: __hostname__
+2024/08/12-10:02:30.195275 2ccc             Options.enforce_single_del_contracts: true
+2024/08/12-10:02:30.195338 2ccc             Options.max_background_jobs: 2
+2024/08/12-10:02:30.195352 2ccc             Options.max_background_compactions: -1
+2024/08/12-10:02:30.195365 2ccc             Options.max_subcompactions: 1
+2024/08/12-10:02:30.195375 2ccc             Options.avoid_flush_during_shutdown: 0
+2024/08/12-10:02:30.195383 2ccc           Options.writable_file_max_buffer_size: 1048576
+2024/08/12-10:02:30.195391 2ccc             Options.delayed_write_rate : 16777216
+2024/08/12-10:02:30.195410 2ccc             Options.max_total_wal_size: 0
+2024/08/12-10:02:30.195422 2ccc             Options.delete_obsolete_files_period_micros: 21600000000
+2024/08/12-10:02:30.195475 2ccc                   Options.stats_dump_period_sec: 600
+2024/08/12-10:02:30.195490 2ccc                 Options.stats_persist_period_sec: 600
+2024/08/12-10:02:30.195497 2ccc                 Options.stats_history_buffer_size: 1048576
+2024/08/12-10:02:30.195505 2ccc                          Options.max_open_files: -1
+2024/08/12-10:02:30.195512 2ccc                          Options.bytes_per_sync: 0
+2024/08/12-10:02:30.195520 2ccc                      Options.wal_bytes_per_sync: 0
+2024/08/12-10:02:30.195528 2ccc                   Options.strict_bytes_per_sync: 0
+2024/08/12-10:02:30.195538 2ccc       Options.compaction_readahead_size: 2097152
+2024/08/12-10:02:30.195546 2ccc                  Options.max_background_flushes: -1
+2024/08/12-10:02:30.195611 2ccc Options.daily_offpeak_time_utc: 
+2024/08/12-10:02:30.195694 2ccc Compression algorithms supported:
+2024/08/12-10:02:30.195718 2ccc 	kZSTD supported: 0
+2024/08/12-10:02:30.195728 2ccc 	kSnappyCompression supported: 0
+2024/08/12-10:02:30.195738 2ccc 	kBZip2Compression supported: 0
+2024/08/12-10:02:30.195850 2ccc 	kZlibCompression supported: 0
+2024/08/12-10:02:30.195869 2ccc 	kLZ4Compression supported: 0
+2024/08/12-10:02:30.195876 2ccc 	kXpressCompression supported: 0
+2024/08/12-10:02:30.195884 2ccc 	kLZ4HCCompression supported: 0
+2024/08/12-10:02:30.195891 2ccc 	kZSTDNotFinalCompression supported: 0
+2024/08/12-10:02:30.196013 2ccc Fast CRC32 supported: Supported on x86
+2024/08/12-10:02:30.196040 2ccc DMutex implementation: std::mutex
+2024/08/12-10:02:30.196051 2ccc Jemalloc supported: 0
+2024/08/12-10:02:30.196501 2ccc [db\version_set.cc:6054] Recovering from manifest file: test/MANIFEST-000067
+2024/08/12-10:02:30.196712 2ccc [db\column_family.cc:629] --------------- Options for column family [default]:
+2024/08/12-10:02:30.196737 2ccc               Options.comparator: leveldb.BytewiseComparator
+2024/08/12-10:02:30.196748 2ccc           Options.merge_operator: None
+2024/08/12-10:02:30.196758 2ccc        Options.compaction_filter: None
+2024/08/12-10:02:30.196770 2ccc        Options.compaction_filter_factory: None
+2024/08/12-10:02:30.196779 2ccc  Options.sst_partitioner_factory: None
+2024/08/12-10:02:30.196787 2ccc         Options.memtable_factory: SkipListFactory
+2024/08/12-10:02:30.196795 2ccc            Options.table_factory: BlockBasedTable
+2024/08/12-10:02:30.196851 2ccc            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (0000019B322614E0)
+  cache_index_and_filter_blocks: 0
+  cache_index_and_filter_blocks_with_high_priority: 1
+  pin_l0_filter_and_index_blocks_in_cache: 0
+  pin_top_level_index_and_filter: 1
+  index_type: 0
+  data_block_index_type: 0
+  index_shortening: 1
+  data_block_hash_table_util_ratio: 0.750000
+  checksum: 4
+  no_block_cache: 0
+  block_cache: 0000019B32270A40
+  block_cache_name: LRUCache
+  block_cache_options:
+    capacity : 33554432
+    num_shard_bits : 6
+    strict_capacity_limit : 0
+    memory_allocator : None
+    high_pri_pool_ratio: 0.500
+    low_pri_pool_ratio: 0.000
+  persistent_cache: 0000000000000000
+  block_size: 4096
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  metadata_block_size: 4096
+  partition_filters: 0
+  use_delta_encoding: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  verify_compression: 0
+  read_amp_bytes_per_bit: 0
+  format_version: 6
+  enable_index_compression: 1
+  block_align: 0
+  max_auto_readahead_size: 262144
+  prepopulate_block_cache: 0
+  initial_auto_readahead_size: 8192
+  num_file_reads_for_auto_readahead: 2
+2024/08/12-10:02:30.196896 2ccc        Options.write_buffer_size: 67108864
+2024/08/12-10:02:30.196916 2ccc  Options.max_write_buffer_number: 2
+2024/08/12-10:02:30.196925 2ccc          Options.compression: NoCompression
+2024/08/12-10:02:30.196933 2ccc                  Options.bottommost_compression: Disabled
+2024/08/12-10:02:30.196941 2ccc       Options.prefix_extractor: nullptr
+2024/08/12-10:02:30.196959 2ccc   Options.memtable_insert_with_hint_prefix_extractor: nullptr
+2024/08/12-10:02:30.196968 2ccc             Options.num_levels: 7
+2024/08/12-10:02:30.196976 2ccc        Options.min_write_buffer_number_to_merge: 1
+2024/08/12-10:02:30.196983 2ccc     Options.max_write_buffer_number_to_maintain: 0
+2024/08/12-10:02:30.197027 2ccc     Options.max_write_buffer_size_to_maintain: 0
+2024/08/12-10:02:30.197042 2ccc            Options.bottommost_compression_opts.window_bits: -14
+2024/08/12-10:02:30.197050 2ccc                  Options.bottommost_compression_opts.level: 32767
+2024/08/12-10:02:30.197058 2ccc               Options.bottommost_compression_opts.strategy: 0
+2024/08/12-10:02:30.197065 2ccc         Options.bottommost_compression_opts.max_dict_bytes: 0
+2024/08/12-10:02:30.197073 2ccc         Options.bottommost_compression_opts.zstd_max_train_bytes: 0
+2024/08/12-10:02:30.197080 2ccc         Options.bottommost_compression_opts.parallel_threads: 1
+2024/08/12-10:02:30.197089 2ccc                  Options.bottommost_compression_opts.enabled: false
+2024/08/12-10:02:30.197100 2ccc         Options.bottommost_compression_opts.max_dict_buffer_bytes: 0
+2024/08/12-10:02:30.197180 2ccc         Options.bottommost_compression_opts.use_zstd_dict_trainer: true
+2024/08/12-10:02:30.197196 2ccc            Options.compression_opts.window_bits: -14
+2024/08/12-10:02:30.197204 2ccc                  Options.compression_opts.level: 32767
+2024/08/12-10:02:30.197211 2ccc               Options.compression_opts.strategy: 0
+2024/08/12-10:02:30.197220 2ccc         Options.compression_opts.max_dict_bytes: 0
+2024/08/12-10:02:30.197229 2ccc         Options.compression_opts.zstd_max_train_bytes: 0
+2024/08/12-10:02:30.197275 2ccc         Options.compression_opts.use_zstd_dict_trainer: true
+2024/08/12-10:02:30.197291 2ccc         Options.compression_opts.parallel_threads: 1
+2024/08/12-10:02:30.197321 2ccc                  Options.compression_opts.enabled: false
+2024/08/12-10:02:30.197333 2ccc         Options.compression_opts.max_dict_buffer_bytes: 0
+2024/08/12-10:02:30.197341 2ccc      Options.level0_file_num_compaction_trigger: 4
+2024/08/12-10:02:30.197349 2ccc          Options.level0_slowdown_writes_trigger: 20
+2024/08/12-10:02:30.197357 2ccc              Options.level0_stop_writes_trigger: 36
+2024/08/12-10:02:30.197364 2ccc                   Options.target_file_size_base: 67108864
+2024/08/12-10:02:30.197371 2ccc             Options.target_file_size_multiplier: 1
+2024/08/12-10:02:30.197380 2ccc                Options.max_bytes_for_level_base: 268435456
+2024/08/12-10:02:30.197418 2ccc Options.level_compaction_dynamic_level_bytes: 1
+2024/08/12-10:02:30.197434 2ccc          Options.max_bytes_for_level_multiplier: 10.000000
+2024/08/12-10:02:30.197445 2ccc Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2024/08/12-10:02:30.197453 2ccc Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2024/08/12-10:02:30.197461 2ccc Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2024/08/12-10:02:30.197469 2ccc Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2024/08/12-10:02:30.197477 2ccc Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2024/08/12-10:02:30.197485 2ccc Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2024/08/12-10:02:30.197520 2ccc Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2024/08/12-10:02:30.197543 2ccc       Options.max_sequential_skip_in_iterations: 8
+2024/08/12-10:02:30.197553 2ccc                    Options.max_compaction_bytes: 1677721600
+2024/08/12-10:02:30.197561 2ccc                        Options.arena_block_size: 1048576
+2024/08/12-10:02:30.197570 2ccc   Options.soft_pending_compaction_bytes_limit: 68719476736
+2024/08/12-10:02:30.197579 2ccc   Options.hard_pending_compaction_bytes_limit: 274877906944
+2024/08/12-10:02:30.197590 2ccc                Options.disable_auto_compactions: 0
+2024/08/12-10:02:30.197599 2ccc                        Options.compaction_style: kCompactionStyleLevel
+2024/08/12-10:02:30.197608 2ccc                          Options.compaction_pri: kMinOverlappingRatio
+2024/08/12-10:02:30.197621 2ccc Options.compaction_options_universal.size_ratio: 1
+2024/08/12-10:02:30.197639 2ccc Options.compaction_options_universal.min_merge_width: 2
+2024/08/12-10:02:30.197761 2ccc Options.compaction_options_universal.max_merge_width: 4294967295
+2024/08/12-10:02:30.197959 2ccc Options.compaction_options_universal.max_size_amplification_percent: 200
+2024/08/12-10:02:30.197969 2ccc Options.compaction_options_universal.compression_size_percent: -1
+2024/08/12-10:02:30.197981 2ccc Options.compaction_options_universal.stop_style: kCompactionStopStyleTotalSize
+2024/08/12-10:02:30.197998 2ccc Options.compaction_options_universal.max_read_amp: -1
+2024/08/12-10:02:30.198010 2ccc Options.compaction_options_fifo.max_table_files_size: 1073741824
+2024/08/12-10:02:30.198019 2ccc Options.compaction_options_fifo.allow_compaction: 0
+2024/08/12-10:02:30.198035 2ccc                   Options.table_properties_collectors: 
+2024/08/12-10:02:30.198048 2ccc                   Options.inplace_update_support: 0
+2024/08/12-10:02:30.198056 2ccc                 Options.inplace_update_num_locks: 10000
+2024/08/12-10:02:30.198065 2ccc               Options.memtable_prefix_bloom_size_ratio: 0.000000
+2024/08/12-10:02:30.198162 2ccc               Options.memtable_whole_key_filtering: 0
+2024/08/12-10:02:30.198186 2ccc   Options.memtable_huge_page_size: 0
+2024/08/12-10:02:30.198197 2ccc                           Options.bloom_locality: 0
+2024/08/12-10:02:30.198206 2ccc                    Options.max_successive_merges: 0
+2024/08/12-10:02:30.198216 2ccc             Options.strict_max_successive_merges: 0
+2024/08/12-10:02:30.198226 2ccc                Options.optimize_filters_for_hits: 0
+2024/08/12-10:02:30.198264 2ccc                Options.paranoid_file_checks: 0
+2024/08/12-10:02:30.198280 2ccc                Options.force_consistency_checks: 1
+2024/08/12-10:02:30.198308 2ccc                Options.report_bg_io_stats: 0
+2024/08/12-10:02:30.198348 2ccc                               Options.ttl: 2592000
+2024/08/12-10:02:30.198363 2ccc          Options.periodic_compaction_seconds: 0
+2024/08/12-10:02:30.198374 2ccc                        Options.default_temperature: kUnknown
+2024/08/12-10:02:30.198383 2ccc  Options.preclude_last_level_data_seconds: 0
+2024/08/12-10:02:30.198391 2ccc    Options.preserve_internal_time_seconds: 0
+2024/08/12-10:02:30.198423 2ccc                       Options.enable_blob_files: false
+2024/08/12-10:02:30.198439 2ccc                           Options.min_blob_size: 0
+2024/08/12-10:02:30.198452 2ccc                          Options.blob_file_size: 268435456
+2024/08/12-10:02:30.198460 2ccc                   Options.blob_compression_type: NoCompression
+2024/08/12-10:02:30.198468 2ccc          Options.enable_blob_garbage_collection: false
+2024/08/12-10:02:30.198475 2ccc      Options.blob_garbage_collection_age_cutoff: 0.250000
+2024/08/12-10:02:30.198485 2ccc Options.blob_garbage_collection_force_threshold: 1.000000
+2024/08/12-10:02:30.198493 2ccc          Options.blob_compaction_readahead_size: 0
+2024/08/12-10:02:30.198501 2ccc                Options.blob_file_starting_level: 0
+2024/08/12-10:02:30.198509 2ccc         Options.experimental_mempurge_threshold: 0.000000
+2024/08/12-10:02:30.198520 2ccc            Options.memtable_max_range_deletions: 0
+2024/08/12-10:02:30.199348 1d38 [WARN] [table\block_based\block_based_table_reader.cc:915] [test/000005.ldb] Tail prefetch size 524288 is calculated based on heuristics.
+2024/08/12-10:02:30.199452 1d38 [ERROR] [table\block_based\block_based_table_reader.cc:1010] Cannot find Properties block from file.
+2024/08/12-10:02:30.199471 1d38 [WARN] [table\block_based\block_based_table_reader.cc:793] At least one SST file opened without unique ID to verify: 5.sst
+2024/08/12-10:02:30.199458 24f4 [WARN] [table\block_based\block_based_table_reader.cc:915] [test/000013.ldb] Tail prefetch size 524288 is calculated based on heuristics.
+2024/08/12-10:02:30.199562 2ccc [WARN] [table\block_based\block_based_table_reader.cc:920] [test/000023.ldb] Tail prefetch size 127 is calculated based on TailPrefetchStats.
+2024/08/12-10:02:30.199622 24f4 [ERROR] [table\block_based\block_based_table_reader.cc:1010] Cannot find Properties block from file.
+2024/08/12-10:02:30.199655 2ccc [ERROR] [table\block_based\block_based_table_reader.cc:1010] Cannot find Properties block from file.
+2024/08/12-10:02:30.199706 1f94 [WARN] [table\block_based\block_based_table_reader.cc:920] [test/000020.ldb] Tail prefetch size 127 is calculated based on TailPrefetchStats.
+2024/08/12-10:02:30.199772 1f94 [ERROR] [table\block_based\block_based_table_reader.cc:1010] Cannot find Properties block from file.
+2024/08/12-10:02:30.200202 355c [WARN] [table\block_based\block_based_table_reader.cc:920] [test/000018.ldb] Tail prefetch size 127 is calculated based on TailPrefetchStats.
+2024/08/12-10:02:30.200364 355c [ERROR] [table\block_based\block_based_table_reader.cc:1010] Cannot find Properties block from file.
+2024/08/12-10:02:30.200930 2ccc [db\version_set.cc:6111] Recovered from manifest file:test/MANIFEST-000067 succeeded,manifest_file_number is 67, next_file_number is 69, last_sequence is 7, log_number is 63,prev_log_number is 0,max_column_family is 0,min_log_number_to_keep is 63
+2024/08/12-10:02:30.200952 2ccc [db\version_set.cc:6120] Column family [default] (ID 0), log number is 63
+2024/08/12-10:02:30.201110 2ccc [db\db_impl\db_impl_open.cc:664] DB ID: bea86ac4-562a-11ef-9e33-c3c5bcb2af49
+2024/08/12-10:02:30.202035 2ccc EVENT_LOG_v1 {"time_micros": 1723424550201998, "job": 1, "event": "recovery_started", "wal_files": [66]}
+2024/08/12-10:02:30.202053 2ccc [db\db_impl\db_impl_open.cc:1167] Recovering log #66 mode 2
+2024/08/12-10:02:30.202915 2ccc EVENT_LOG_v1 {"time_micros": 1723424550202904, "job": 1, "event": "recovery_finished"}
+2024/08/12-10:02:30.203311 2ccc [db\version_set.cc:5546] Creating manifest 71
+2024/08/12-10:02:30.209167 2ccc [db\db_impl\db_impl_open.cc:2244] SstFileManager instance 0000019B32280490
+2024/08/12-10:02:30.209776 2ccc [file\delete_scheduler.cc:78] Deleted file test/000066.log immediately, rate_bytes_per_sec 0, total_trash_size 0, total_size 2881, max_trash_db_ratio 0.250000
+2024/08/12-10:02:30.209932 2ccc DB pointer 0000019B32282180
+2024/08/12-10:02:30.210008 2ccc [db\db_impl\db_impl_compaction_flush.cc:1959] [default] Manual flush start.
+2024/08/12-10:02:30.210030 2ccc [db\db_impl\db_impl_compaction_flush.cc:1970] [default] Manual flush finished, status: OK
+2024/08/12-10:02:30.210064 2ccc [db\db_impl\db_impl.cc:500] Shutdown: canceling all background work
+2024/08/12-10:02:30.211486 2ccc [db\db_impl\db_impl.cc:693] Shutdown complete

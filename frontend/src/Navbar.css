@@ -4,14 +4,54 @@
     border-top: 0.05rem solid #dddddd;
     background-color: white;
     box-sizing: border-box;
-    display: flex; /* 추가: 플렉스박스를 사용하여 자식 요소를 수평으로 배치 */
+    display: flex; 
+    align-items: center; 
+    padding: 3rem; 
+    position: relative; 
+}
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #cccccc; 
+    border-radius: 1px; 
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem; 
+    height: 45px; 
+}
+
+.logo-image {
+    height: 50px; 
+    margin-right: 3rem; 
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 45px; 
 }
 
 .nav-link {
-    flex: 1; /* 추가: 각 링크를 균등하게 배치 */
+    flex: 1; 
     text-align: center;
-    height: 45px;
-    line-height: 45px; /* 수정: 높이와 맞게 라인 높이 조정 */
+    height: 45px; 
+    line-height: 45px;
+    color: #808080; 
+    text-transform: uppercase;
+    font-size: 0.85rem; 
+}
+
+.nav-link div {
+    padding: 0rem 0rem;
 }
 
 .active {
@@ -20,4 +60,8 @@
 
 .inactive {
     color: #808080;
+}
+
+.nav-link:hover .inactive {
+    color: #333; 
 }
