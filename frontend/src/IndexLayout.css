@@ -1,0 +1,32 @@
+.index-layout {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 200px;
+}
+
+.index-list {
+    width: 30%;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+.index-item {
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.index-item.active {
+    background-color: #6271f5;
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

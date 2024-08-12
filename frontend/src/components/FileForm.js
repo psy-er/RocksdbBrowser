@@ -32,7 +32,6 @@ const FileForm = () => {
     };
 
     return (
-        <WithNavbar>
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 
@@ -47,7 +46,6 @@ const FileForm = () => {
                 />
                 <button type="submit">Insert File Info</button>
             </form>
-        </WithNavbar>
     );
 };
 

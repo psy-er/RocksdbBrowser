@@ -12,13 +12,14 @@ import ReadCompressedFile from './feat_read_file/ReadCompressedFile';
 import ReadFile from './feat_read_file/ReadFile';
 import ReadRocksdbMetadata from './feat_read_rocksdb_metadata/ReadRocksdbMetadata';
 import RocksdbManual from './feat_introduce_rocksdb/RocksdbManual';
+import IndexLayout from './IndexLayout';
 
 function App() {
     return (
             <Routes>
                 
                 {/* test */}
-                <Route path="/" element={<FileForm />} />
+                <Route path="/" element={<IndexLayout/>} />
                 <Route path="/filelist" element={<FileList />} />
 
                 {/*Rocksdb 메인 페이지*/}
