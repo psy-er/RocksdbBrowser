@@ -12,9 +12,9 @@ const IndexLayout = () => {
 
     // 인덱스 목록과 각 인덱스에 대응하는 콘텐츠
     const items = [
-        {id:1, label: 'Data Insert', component: <FileForm/>},
+        {id:1, label: 'Data viewer', component: <FileForm/>},
         {id:2, label: 'Data List', component: <FileList/>},
-        {id:3, label: 'Item 3', component: <Item3Content/>}
+        {id:3, label: 'Data Insert', component: <FileForm/>}
     ];
 
     // 선택된 인덱스를 상태로 관리
