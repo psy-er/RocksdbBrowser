@@ -13,7 +13,7 @@ int main() {
     options.write_buffer_size = 1; 
 
     // 데이터베이스 복구
-    rocksdb::Status status = rocksdb::RepairDB("C:\\RocksdbBrowser\\RocksdbBrower\\backend\\test4", options);
+    rocksdb::Status status = rocksdb::RepairDB("C:\\RocksdbBrowser\\RocksdbBrower\\rocksdbpath\\test4", options);
     if (!status.ok()) {
         std::cerr << "데이터베이스 복구 실패: " << status.ToString() << std::endl;
         return 1;

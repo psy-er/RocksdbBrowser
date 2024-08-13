@@ -4,7 +4,7 @@ const { execFile } = require('child_process');
 const levelup = require('levelup');
 const leveldown = require('leveldown');
 
-const dbPath = 'test4';
+const dbPath = 'C:\\RocksdbBrowser\\RocksdbBrower\\rocksdbpath\\test4';
 const db = levelup(leveldown(dbPath), { createIfMissing: true });
 
 db.open((err) => {

@@ -1,5 +1,5 @@
-2024/08/13-11:04:40.291 37bc Recovering log #17
-2024/08/13-11:04:40.291 37bc Level-0 table #20: started
-2024/08/13-11:04:40.293 37bc Level-0 table #20: 191 bytes OK
-2024/08/13-11:04:40.296 37bc Delete type=0 #17
-2024/08/13-11:04:40.297 37bc Delete type=3 #15
+2024/08/13-13:36:48.258 3df4 Recovering log #21
+2024/08/13-13:36:48.259 3df4 Level-0 table #23: started
+2024/08/13-13:36:48.262 3df4 Level-0 table #23: 183 bytes OK
+2024/08/13-13:36:48.266 3df4 Delete type=0 #21
+2024/08/13-13:36:48.266 3df4 Delete type=3 #19
