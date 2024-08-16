@@ -30,7 +30,7 @@ const FileForm = () => {
             console.error('There was an error inserting the data!', error);
         }
     };
-
+    
     return (
             <form onSubmit={handleSubmit}>
                 <input 

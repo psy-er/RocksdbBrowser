@@ -7,12 +7,13 @@ import Item2Content from './item2Content';
 import Item3Content from './Item3Content';
 import FileForm from './components/FileForm';
 import FileList from './components/FileList';
+import DataViewer from './components/DataViewer';
 
 const IndexLayout = () => {
 
     // 인덱스 목록과 각 인덱스에 대응하는 콘텐츠
     const items = [
-        {id:1, label: 'Data viewer', component: <FileForm/>},
+        {id:1, label: 'Data viewer', component: <DataViewer/>},
         {id:2, label: 'Data List', component: <FileList/>},
         {id:3, label: 'Data Insert', component: <FileForm/>}
     ];
