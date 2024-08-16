@@ -23,7 +23,7 @@ app.post('/analyze-sst', (req, res) => {
 
     // 먼저 sst_dump를 실행해야 합니다.
     const { exec } = require('child_process');
-    exec(`"${sstDumpPath}" --file="${sstFilePath}" --output_format=plain --output_file="${dumpFilePath}"`, (err, stdout, stderr) => {
+    exec(`"${sstDumpPath}" --file="${sstFilePath}" --command=raw > "${dumpFilePath}"`, (err, stdout, stderr) => {
         if (err) {
             return res.status(500).json({ error: stderr });
         }
@@ -39,7 +39,7 @@ app.post('/analyze-sst', (req, res) => {
             }
 
             // 필요에 따라 덤프된 데이터를 처리합니다.
-            res.json({ data });
+            //res.json({ data });
         });
     });
 });
