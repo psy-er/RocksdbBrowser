@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "rocksdb": "^5.2.1"
+  }
+}
