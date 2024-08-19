@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function DataViewer() {
   const [sstFilePath, setSstFilePath] = useState('');
-  const [data, setData] = useState(null); // 데이터를 저장하는 상태
+  const [data, setData] = useState(null); // 상태로 데이터를 저장
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
@@ -22,6 +22,23 @@ function DataViewer() {
     }
   };
 
+  const renderKeyValuePairs = (data) => (
+    <div>
+      <h3>Key : Value</h3>
+      <ul>
+        {Object.entries(data).length > 0 ? (
+          Object.entries(data).map(([key, value], index) => (
+            <li key={index}>
+              <strong>{key}:</strong> {value}
+            </li>
+          ))
+        ) : (
+          <li>No data available</li>
+        )}
+      </ul>
+    </div>
+  );
+
   return (
     <div>
       <h1>RocksDB SST Analyzer</h1>
@@ -37,7 +54,7 @@ function DataViewer() {
         <button type="submit">Analyze</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-
+      {data && renderKeyValuePairs(data)}
     </div>
   );
 }
