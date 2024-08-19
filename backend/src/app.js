@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
+const path = require('path'); // Make sure to import the path module
 const { exec } = require('child_process');
+const unzipper = require('unzipper'); // Ensure you have installed this module
 
 const app = express();
 app.use(cors());
@@ -21,7 +23,7 @@ const sstDumpPath = "C:\\RocksdbBrowser\\RocksdbBrower\\rocksdb\\build\\tools\\R
 const dumpFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\dump.txt";
 const realdumpFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output_dump.txt";
 //const sstFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output.sst";
-
+//const sstFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output - 복사본.zip";
 
 app.post('/analyze-sst', (req, res) => {
     console.log('POST request received');
@@ -49,6 +51,67 @@ app.post('/analyze-sst', (req, res) => {
             res.json(parsedData);
         });
     });
+});
+
+app.post('/analyze-sst/zip', (req, res) => {
+    console.log('POST request received');
+    const { sstFilePath } = req.body;
+
+    if (!fs.existsSync(sstFilePath)) {
+        return res.status(400).json({ error: 'File not found' });
+    }
+
+    const unzipOutputDir = path.join(path.dirname(sstFilePath), 'unzipped');
+
+    if (!fs.existsSync(unzipOutputDir)) {
+        fs.mkdirSync(unzipOutputDir);
+    }
+
+    fs.createReadStream(sstFilePath)
+        .pipe(unzipper.Extract({ path: unzipOutputDir }))
+        .on('close', () => {
+            console.log('Unzip completed.');
+
+            // Get the first unzipped .sst file
+            const unzippedFiles = fs.readdirSync(unzipOutputDir);
+            let sstFile = unzippedFiles.find(file => path.extname(file) === '.sst');
+
+            if (!sstFile) {
+                return res.status(400).json({ error: 'No .sst file found in the archive' });
+            }
+
+            let originalUnzippedFilePath = path.join(unzipOutputDir, sstFile);
+            let cleanUnzippedFilePath = path.join(unzipOutputDir, 'cleaned_output.sst');
+
+            // Rename the file to a simpler name if it contains special characters
+            try {
+                fs.renameSync(originalUnzippedFilePath, cleanUnzippedFilePath);
+            } catch (error) {
+                return res.status(500).json({ error: 'Failed to rename the unzipped file' });
+            }
+
+            // Execute sst_dump
+            exec(`"${sstDumpPath}" --file="${cleanUnzippedFilePath}" --command=raw > "${dumpFilePath}"`, (err, stdout, stderr) => {
+                if (err) {
+                    console.error(`Error executing sst_dump: ${stderr}`);
+                    return res.status(500).json({ error: stderr });
+                }
+
+                fs.readFile(realdumpFilePath, 'utf8', (err, data) => {
+                    if (err) {
+                        console.error(`Error reading dump file: ${err.message}`);
+                        return res.status(500).json({ error: err.message });
+                    }
+
+                    const parsedData = parseDumpData(data);
+                    res.json(parsedData);
+                });
+            });
+        })
+        .on('error', (err) => {
+            console.error(`Error during unzip: ${err.message}`);
+            return res.status(500).json({ error: 'Failed to unzip the file' });
+        });
 });
 
 function parseDumpData(data) {
