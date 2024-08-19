@@ -1,20 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
 
 const app = express();
 app.use(cors());
 
-const corsOptions = {
-    origin: 'http://localhost:3000', // 허용할 출처
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: 'Content-Type',
-};
-
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+    console.log(`Request Method: ${req.method}`);
+    console.log(`Request URL: ${req.url}`);
+    console.log(`Request Headers: ${JSON.stringify(req.headers)}`);
+    next(); // Pass request to the next middleware
+});
 
 app.use(bodyParser.json());
 
@@ -23,6 +21,7 @@ const sstDumpPath = "C:\\RocksdbBrowser\\RocksdbBrower\\rocksdb\\build\\tools\\R
 const dumpFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\dump.txt";
 const realdumpFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output_dump.txt";
 //const sstFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output.sst";
+
 
 app.post('/analyze-sst', (req, res) => {
     console.log('POST request received');
@@ -38,103 +37,37 @@ app.post('/analyze-sst', (req, res) => {
             return res.status(500).json({ error: stderr });
         }
 
-        // 덤프된 파일 읽기
+        // Read the dumped file
         fs.readFile(realdumpFilePath, 'utf8', (err, data) => {
             if (err) {
                 console.error(`Error reading dump file: ${err.message}`);
                 return res.status(500).json({ error: err.message });
             }
 
-            console.log('Dump data:', data); // 데이터 확인
-
-            try {
-                const sections = data.split('--------------------------------------').map(s => s.trim());
-                const jsonData = {};
-
-                sections.forEach(section => {
-                    const lines = section.split('\n').map(line => line.trim());
-
-                    if (lines.length === 0) return;
-
-                    const header = lines[0];
-                    const content = lines.slice(1);
-
-                    switch (header) {
-                        case 'Footer Details:':
-                            jsonData.footerDetails = parseKeyValueSection(content);
-                            break;
-                        case 'Metaindex Details:':
-                            jsonData.metaindexDetails = parseKeyValueSection(content);
-                            break;
-                        case 'Table Properties:':
-                            jsonData.tableProperties = parseKeyValueSection(content);
-                            break;
-                        case 'Index Details:':
-                            jsonData.indexDetails = parseIndexDetails(content);
-                            break;
-                        case 'Data Block Summary:':
-                            jsonData.dataBlockSummary = parseKeyValueSection(content);
-                            break;
-                        default:
-                            // 추가적으로 생성될 내용도 적기
-                            break;
-                    }
-                });
-
-                res.json(jsonData);
-
-            } catch (parseError) {
-                console.error(`Error parsing dump data: ${parseError.message}`);
-                res.status(500).json({ error: 'Failed to parse dump data' });
-            }
+            // Parse the data
+            const parsedData = parseDumpData(data);
+            res.json(parsedData);
         });
     });
 });
 
-function parseKeyValueSection(lines) {
-    const sectionData = {};
-    lines.forEach(line => {
-        const [key, value] = line.split(':').map(s => s.trim());
-        if (key && value !== undefined) {
-            sectionData[key] = value;
+function parseDumpData(data) {
+    const keyValuePattern = /HEX\s+([0-9A-Fa-f]+):\s+([0-9A-Fa-f\s]+)\s+ASCII\s+([^\n]+)\n/g;
+    const result = {};
+    let match;
+
+    while ((match = keyValuePattern.exec(data)) !== null) {
+        const hex = match[1].trim();
+        const ascii = match[3].trim();
+
+        // Extract key and value from the ASCII string
+        const [key, value] = ascii.split(' : ');
+        if (key && value) {
+            result[key.trim()] = value.trim();
         }
-    });
-    return sectionData;
-}
-
-function parseIndexDetails(lines) {
-    const indexDetails = {
-        blocks: []
-    };
-    let currentBlock = null;
-
-    lines.forEach(line => {
-        if (line.startsWith('HEX') || line.startsWith('ASCII')) {
-            if (!currentBlock) {
-                currentBlock = {};
-            }
-
-            const [type, data] = line.split(' ').filter(Boolean);
-            currentBlock[type.toLowerCase()] = data;
-
-        } else if (line.startsWith('Block key')) {
-            if (currentBlock) {
-                indexDetails.blocks.push(currentBlock);
-                currentBlock = null;
-            }
-        } else {
-            const [key, value] = line.split(':').map(s => s.trim());
-            if (key && value !== undefined) {
-                indexDetails[key] = value;
-            }
-        }
-    });
-
-    if (currentBlock) {
-        indexDetails.blocks.push(currentBlock);
     }
 
-    return indexDetails;
+    return result;
 }
 
 module.exports = app;
