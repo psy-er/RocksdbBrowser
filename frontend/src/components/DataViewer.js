@@ -22,14 +22,44 @@ function DataViewer() {
     }
   };
 
-  const renderSection = (title, content) => (
+  const renderKeyValueSection = (title, content) => (
     <div>
       <h3>{title}</h3>
       <ul>
-        {Object.entries(content).map(([key, value], index) => (
-          <li key={index}>
-            <strong>{key}:</strong> {JSON.stringify(value)}
-          </li>
+        {Object.entries(content).length > 0 ? (
+          Object.entries(content).map(([key, value], index) => (
+            <li key={index}>
+              <strong>{key}:</strong> {value}
+            </li>
+          ))
+        ) : (
+          <li>No data available</li>
+        )}
+      </ul>
+    </div>
+  );
+
+  const renderIndexDetails = (indexDetails) => (
+    <div>
+      <h3>Index Details</h3>
+      <ul>
+        {indexDetails.blocks.length > 0 ? (
+          indexDetails.blocks.map((block, index) => (
+            <li key={index}>
+              <div><strong>Block {index + 1}</strong></div>
+              <div>HEX: {block.hex}</div>
+              <div>ASCII: {block.ascii}</div>
+            </li>
+          ))
+        ) : (
+          <li>No blocks available</li>
+        )}
+        {Object.entries(indexDetails).map(([key, value], index) => (
+          key !== 'blocks' && (
+            <li key={index}>
+              <strong>{key}:</strong> {value}
+            </li>
+          )
         ))}
       </ul>
     </div>
@@ -52,11 +82,11 @@ function DataViewer() {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {data ? (
         <div>
-          {data.footerDetails && renderSection('Footer Details', data.footerDetails)}
-          {data.metaindexDetails && renderSection('Metaindex Details', data.metaindexDetails)}
-          {data.tableProperties && renderSection('Table Properties', data.tableProperties)}
-          {data.indexDetails && renderSection('Index Details', data.indexDetails)}
-          {data.dataBlockSummary && renderSection('Data Block Summary', data.dataBlockSummary)}
+          {data.footerDetails && renderKeyValueSection('Footer Details', data.footerDetails)}
+          {data.metaindexDetails && renderKeyValueSection('Metaindex Details', data.metaindexDetails)}
+          {data.tableProperties && renderKeyValueSection('Table Properties', data.tableProperties)}
+          {data.indexDetails && renderIndexDetails(data.indexDetails)}
+          {data.dataBlockSummary && renderKeyValueSection('Data Block Summary', data.dataBlockSummary)}
         </div>
       ) : (
         <p>sst 파일 경로를 입력해주세요.</p>

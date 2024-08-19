@@ -7,6 +7,15 @@ const { exec } = require('child_process');
 
 const app = express();
 app.use(cors());
+
+const corsOptions = {
+    origin: 'http://localhost:3000', // 허용할 출처
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type',
+};
+
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
 
 const sstDumpPath = "C:\\RocksdbBrowser\\RocksdbBrower\\rocksdb\\build\\tools\\Release\\sst_dump.exe";
@@ -16,6 +25,7 @@ const realdumpFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_fil
 //const sstFilePath = "C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output.sst";
 
 app.post('/analyze-sst', (req, res) => {
+    console.log('POST request received');
     const { sstFilePath } = req.body;
 
     if (!fs.existsSync(sstFilePath)) {
