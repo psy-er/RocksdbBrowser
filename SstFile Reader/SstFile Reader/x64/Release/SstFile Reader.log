@@ -1,0 +1,2 @@
+﻿  sst_reader.cpp
+C:\RocksdbBrowser\RocksdbBrower\SstFile Reader\sst_reader.cpp(3,10): error C1083: 포함 파일을 열 수 없습니다. 'rocksdb/sst_file_reader.h': No such file or directory
