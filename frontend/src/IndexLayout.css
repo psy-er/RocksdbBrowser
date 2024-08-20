@@ -1,7 +1,7 @@
 .index-layout {
     display: flex;
     border: 1px solid #ddd;
-    height: 700px;
+    height: 400px;
 }
 
 .index-list {

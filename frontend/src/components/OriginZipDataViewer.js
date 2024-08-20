@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function ZipDataViewer() {
+function OriginZipDataViewer() {
   const [sstFilePath, setSstFilePath] = useState('');
   const [data, setData] = useState(null); // 상태로 데이터를 저장
   const [error, setError] = useState('');
@@ -10,7 +10,7 @@ function ZipDataViewer() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/analyze-sst/zip', {
+      const response = await axios.post('http://localhost:5000/origin/analyze-sst/zip', {
         sstFilePath,
       });
 
@@ -41,7 +41,7 @@ function ZipDataViewer() {
 
   return (
     <div>
-      <h1>RocksDB Compressed SST Analyzer</h1>
+      <h1>RocksDB Origin Compressed SST Analyzer</h1>
       <form onSubmit={handleSubmit}>
         <label>
           SST File Path:
@@ -59,4 +59,4 @@ function ZipDataViewer() {
   );
 }
 
-export default ZipDataViewer;
+export default OriginZipDataViewer;
