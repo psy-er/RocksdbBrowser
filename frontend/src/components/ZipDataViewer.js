@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function DataViewer() {
+function ZipDataViewer() {
   const [sstFilePath, setSstFilePath] = useState('');
   const [data, setData] = useState(null); // 상태로 데이터를 저장
   const [error, setError] = useState('');
@@ -59,4 +59,4 @@ function DataViewer() {
   );
 }
 
-export default DataViewer;
+export default ZipDataViewer;

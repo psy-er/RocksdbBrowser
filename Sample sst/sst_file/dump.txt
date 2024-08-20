@@ -1,4 +1,4 @@
-options.env is 00000273908FBB80
-Process C:\RocksdbBrowser\RocksdbBrower\Sample sst\sst_file\unzipped\cleaned_output.sst
+options.env is 000001FA6EF47A00
+Process C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output.sst
 Sst file format: block-based
-raw dump written to file C:\RocksdbBrowser\RocksdbBrower\Sample sst\sst_file\unzipped\cleaned_output_dump.txt
+raw dump written to file C:\\RocksdbBrowser\\RocksdbBrower\\Sample sst\\sst_file\\output_dump.txt

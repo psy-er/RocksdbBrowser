@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "target_name": "sst_reader",  // 애드온의 이름
+      "sources": [ "src/sst_reader.cpp" ],  // 소스 파일의 경로
+      "include_dirs": [
+        "<!(node -p \"require('node-addon-api').include\")",  // Node-addon-api 헤더 파일 경로
+        "<!(node -p \"require('rocksdb').include\")"  // RocksDB 헤더 파일 경로
+      ],
+      "libraries": [
+        "<!(node -p \"require('rocksdb').lib\")"  // RocksDB 라이브러리 링크
+      ],
+      "cxxflags": [ "-std=c++11" ]  // C++11 표준 사용
+    }
+  ]
+}
