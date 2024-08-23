@@ -1,8 +1,12 @@
 #include <napi.h>
-//#include <node_api.h>
 #include <rocksdb/sst_file_reader.h>
 #include <rocksdb/options.h>
+#include <rocksdb/iterator.h>
 #include <memory>
+
+using namespace std;
+using namespace Napi;
+using namespace rocksdb;
 
 Napi::Value ReadSstFile(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
@@ -12,15 +16,16 @@ Napi::Value ReadSstFile(const Napi::CallbackInfo& info) {
         Napi::TypeError::New(env, "String expected for file path").ThrowAsJavaScriptException();
         return env.Null();
     }
-
     std::string file_path = info[0].As<Napi::String>().Utf8Value();
 
     // RocksDB의 옵션을 설정합니다.
     rocksdb::Options options;
-    rocksdb::SstFileReader reader(file_path, options);
+
+    // SstFileReader를 생성합니다. 생성자에 인자를 전달하지 않습니다.
+    rocksdb::SstFileReader reader(options);
 
     // SST 파일을 엽니다.
-    rocksdb::Status status = reader.Open();
+    rocksdb::Status status = reader.Open(file_path);
     if (!status.ok()) {
         Napi::TypeError::New(env, "Failed to open SST file: " + status.ToString()).ThrowAsJavaScriptException();
         return env.Null();

@@ -10,7 +10,7 @@
       "libraries": [
         "<!(node -p \"require('rocksdb').lib\")"  // RocksDB 라이브러리 링크
       ],
-      "cxxflags": [ "-std=c++11" ]  // C++11 표준 사용
+      "cxxflags": [ "-std=c++11" ]  // C++17 표준 사용
     }
   ]
 }
