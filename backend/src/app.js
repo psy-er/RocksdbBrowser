@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path'); // Make sure to import the path module
 const { exec } = require('child_process');
 const unzipper = require('unzipper'); // Ensure you have installed this module
+const { spawn } = require('child_process');
 
 const app = express();
 app.use(cors());
@@ -113,6 +114,41 @@ app.post('/analyze-sst/zip', (req, res) => {
             return res.status(500).json({ error: 'Failed to unzip the file' });
         });
 });
+
+
+app.post('/origin/analyze-sst', (req, res) => {
+    const { sstFilePath } = req.body;
+
+    if (!sstFilePath) {
+        return res.status(400).json({ error: 'sstFilePath is required' });
+    }
+
+    const outputJsonPath = path.join(__dirname, 'output.json');
+
+    // 경로 공백 처리를 위해 큰따움표로 묶기
+    const command = `"C:\\RocksdbBrowser\\RocksdbBrower\\Sst\\Sst\\x64\\Release\\Sst.exe" "${sstFilePath}" "${outputJsonPath}"`;
+
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`exec error: ${error}`);
+            return res.status(500).json({ error: 'Failed to convert SST file' });
+        }
+
+        fs.readFile(outputJsonPath, 'utf8', (err, data) => {
+            if (err) {
+                console.error(`readFile error: ${err}`);
+                return res.status(500).json({ error: 'Failed to read JSON file' });
+            }
+
+            res.json(JSON.parse(data));
+        });
+    });
+});
+
+app.post('/origin/analyze-sst/zip', (req, res) => {
+
+});
+
 
 function parseDumpData(data) {
     const keyValuePattern = /HEX\s+([0-9A-Fa-f]+):\s+([0-9A-Fa-f\s]+)\s+ASCII\s+([^\n]+)\n/g;

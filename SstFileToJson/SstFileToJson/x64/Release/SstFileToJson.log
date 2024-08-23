@@ -1,0 +1,32 @@
+﻿  sst_to_json.cpp
+rocksdb.lib(range_tombstone_fragmenter.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(env_encryption.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(sst_partitioner.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(table_factory.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(compaction_filters.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(merge_operators.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(statistics.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(flush_block_policy.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(plain_table_factory.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(compact_on_deletion_collector.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(filter_policy.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(port_win.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(file_system.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(file_checksum_helper.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(env_default.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(slice.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(comparator.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(env.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_init_once_link_alternate_names_and_abort
+rocksdb.lib(port_win.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp_RpcStringFreeA
+rocksdb.lib(port_win.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp_UuidCreateSequential
+rocksdb.lib(port_win.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp_UuidToStringA
+rocksdb.lib(env_win.obj) : error LNK2001: 확인할 수 없는 외부 기호 _Thrd_sleep_for
+rocksdb.lib(replayer_impl.obj) : error LNK2001: 확인할 수 없는 외부 기호 _Thrd_sleep_for
+rocksdb.lib(env_win.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp_PathIsDirectoryA
+rocksdb.lib(env_win.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp_PathIsRelativeA
+rocksdb.lib(column_family.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_find_trivial_4
+rocksdb.lib(vectorrep.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_find_trivial_8
+rocksdb.lib(write_unprepared_txn.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_find_trivial_8
+rocksdb.lib(internal_stats.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_min_element_8
+rocksdb.lib(internal_stats.obj) : error LNK2001: 확인할 수 없는 외부 기호 __std_min_8u
+C:\RocksdbBrowser\RocksdbBrower\SstFileToJson\x64\Release\SstFileToJson.exe : fatal error LNK1120: 11개의 확인할 수 없는 외부 참조입니다.
