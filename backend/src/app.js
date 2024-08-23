@@ -146,7 +146,72 @@ app.post('/origin/analyze-sst', (req, res) => {
 });
 
 app.post('/origin/analyze-sst/zip', (req, res) => {
+    const { sstFilePath } = req.body;
 
+    if (!sstFilePath) {
+        return res.status(400).json({ error: 'sstFilePath is required' });
+    }
+
+    if (!fs.existsSync(sstFilePath)) {
+        return res.status(400).json({ error: 'File not found' });
+    }
+
+    const unzipOutputDir = path.join(path.dirname(sstFilePath), 'unzipped');
+
+    // 압축 해제할 디렉토리 생성
+    if (!fs.existsSync(unzipOutputDir)) {
+        fs.mkdirSync(unzipOutputDir);
+    }
+
+    // 압축 해제 진행
+    fs.createReadStream(sstFilePath)
+        .pipe(unzipper.Extract({ path: unzipOutputDir }))
+        .on('close', () => {
+            console.log('Unzip completed.');
+
+            // 첫 번째 .sst 파일 찾기
+            const unzippedFiles = fs.readdirSync(unzipOutputDir);
+            let sstFile = unzippedFiles.find(file => path.extname(file) === '.sst');
+
+            if (!sstFile) {
+                return res.status(400).json({ error: 'No .sst file found in the archive' });
+            }
+
+            let originalUnzippedFilePath = path.join(unzipOutputDir, sstFile);
+            let cleanUnzippedFilePath = path.join(unzipOutputDir, 'cleaned_output.sst');
+
+            // 파일명 정리
+            try {
+                fs.renameSync(originalUnzippedFilePath, cleanUnzippedFilePath);
+            } catch (error) {
+                return res.status(500).json({ error: 'Failed to rename the unzipped file' });
+            }
+
+            // 명령어 생성 및 실행
+            const outputJsonPath = path.join(__dirname, 'output.json');
+            const command = `"C:\\RocksdbBrowser\\RocksdbBrower\\Sst\\Sst\\x64\\Release\\Sst.exe" "${cleanUnzippedFilePath}" "${outputJsonPath}"`;
+
+            exec(command, (error, stdout, stderr) => {
+                if (error) {
+                    console.error(`exec error: ${error}`);
+                    return res.status(500).json({ error: 'Failed to convert SST file' });
+                }
+
+                // JSON 파일 읽기
+                fs.readFile(outputJsonPath, 'utf8', (err, data) => {
+                    if (err) {
+                        console.error(`readFile error: ${err}`);
+                        return res.status(500).json({ error: 'Failed to read JSON file' });
+                    }
+
+                    res.json(JSON.parse(data));
+                });
+            });
+        })
+        .on('error', (err) => {
+            console.error(`Error during unzip: ${err.message}`);
+            return res.status(500).json({ error: 'Failed to unzip the file' });
+        });
 });
 
 

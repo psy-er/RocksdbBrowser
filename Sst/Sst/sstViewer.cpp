@@ -5,7 +5,7 @@
 #include <memory>
 #include <rocksdb/sst_file_reader.h>
 #include <rocksdb/options.h>
-#include <nlohmann/json.hpp>  
+#include <nlohmann/json.hpp>  // json 형식으로 변환시키는 라이브러리
 
 using json = nlohmann::json;
 
