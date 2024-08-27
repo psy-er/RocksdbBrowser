@@ -2,24 +2,33 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function OriginZipDataViewer() {
-  const [sstFilePath, setSstFilePath] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
   const [jsonData, setJsonData] = useState(null);
   const [error, setError] = useState('');
+
+  const handleFileChange = (e) => {
+    setSelectedFile(e.target.files[0]); // 선택한 파일을 상태로 저장
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!sstFilePath) {
-      alert('Please enter the full SST file path first');
+    if (!selectedFile) {
+      alert('Please select a ZIP file first');
       return;
     }
 
+    const formData = new FormData();
+    formData.append('sstFile', selectedFile); // 파일을 FormData에 추가
+
     try {
-      const response = await axios.post('http://localhost:5000/origin/analyze-sst/zip', {
-        sstFilePath, // 전체 경로를 서버에 전달
+      const response = await axios.post('http://localhost:5000/origin/analyze-sst/zip', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data' // 파일 업로드를 위한 헤더
+        }
       });
 
-      setJsonData(response.data);
+      setJsonData(response.data); // 응답으로 받은 데이터
       setError('');
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred');
@@ -46,14 +55,14 @@ function OriginZipDataViewer() {
 
   return (
     <div>
-      <h1>RocksDB Origin Compressed SST Analyzer</h1>
+      <h1>RocksDB SST File Viewer</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          SST File Path:
+          Select ZIP File:
           <input
-            type="text"
-            value={sstFilePath}
-            onChange={(e) => setSstFilePath(e.target.value)}
+            type="file"
+            onChange={handleFileChange}
+            accept=".zip" // ZIP 파일만 허용하도록 설정
           />
         </label>
         <button type="submit">Convert and View</button>

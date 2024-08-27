@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import './IndexLayout.css'
 import WithNavbar from './WithNavbar';
 
-import Item1Content from './Item1Content';
-import Item2Content from './item2Content';
-import Item3Content from './Item3Content';
 import FileForm from './components/FileForm';
 import FileList from './components/FileList';
 import DataViewer from './components/DataViewer';
