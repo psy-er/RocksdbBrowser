@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Navbar';
-import FileForm from './components/FileForm';
 import FileList from './components/FileList';
 import InsertData from './feat_data/InsertData';
 import SelectData from './feat_data/SelectData';

@@ -2,21 +2,30 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function OriginDataViewer() {
-  const [sstFilePath, setSstFilePath] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
   const [jsonData, setJsonData] = useState(null);
   const [error, setError] = useState('');
+
+  const handleFileChange = (e) => {
+    setSelectedFile(e.target.files[0]); // 선택한 파일을 상태로 저장
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!sstFilePath) {
-      alert('Please enter the full SST file path first');
+    if (!selectedFile) {
+      alert('Please select an SST file first');
       return;
     }
 
+    const formData = new FormData();
+    formData.append('sstFile', selectedFile); // 파일을 FormData에 추가
+
     try {
-      const response = await axios.post('http://localhost:5000/origin/analyze-sst', {
-        sstFilePath, // 전체 경로를 서버에 전달
+      const response = await axios.post('http://localhost:5000/origin/analyze-sst', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data' // 파일 업로드를 위한 헤더
+        }
       });
 
       setJsonData(response.data);
@@ -49,11 +58,11 @@ function OriginDataViewer() {
       <h1>RocksDB SST File Viewer</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          SST File Path:
+          Select SST File:
           <input
-            type="text"
-            value={sstFilePath}
-            onChange={(e) => setSstFilePath(e.target.value)}
+            type="file"
+            onChange={handleFileChange}
+            accept=".sst,.zip" // 필요한 파일 형식을 지정
           />
         </label>
         <button type="submit">Convert and View</button>
