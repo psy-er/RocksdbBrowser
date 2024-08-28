@@ -65,7 +65,7 @@ function OriginZipDataViewer() {
             accept=".zip" // ZIP 파일만 허용하도록 설정
           />
         </label>
-        <button type="submit">Convert and View</button>
+        <button type="submit">View</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {jsonData && renderKeyValuePairs(jsonData)}

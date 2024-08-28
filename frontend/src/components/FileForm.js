@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import WithNavbar from '../WithNavbar';
 
 const FileForm = () => {
     const [filePath, setFilePath] = useState('');
