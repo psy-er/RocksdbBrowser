@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function DataViewer() {
   const [sstFilePath, setSstFilePath] = useState('');
-  const [data, setData] = useState(null); // 상태로 데이터를 저장
+  const [data, setData] = useState(null); 
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
@@ -14,7 +14,7 @@ function DataViewer() {
         sstFilePath,
       });
 
-      setData(response.data); // 서버에서 받은 전체 JSON 객체를 상태로 저장
+      setData(response.data); // 서버에서 받은 전체 JSON 객체를 데이터에 저장
       setError('');
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred');

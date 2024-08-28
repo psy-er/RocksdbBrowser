@@ -65,7 +65,7 @@ function OriginDataViewer() {
             accept=".sst,.zip" // 필요한 파일 형식을 지정
           />
         </label>
-        <button type="submit">Convert and View</button>
+        <button type="submit">View</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {jsonData && renderKeyValuePairs(jsonData)}
